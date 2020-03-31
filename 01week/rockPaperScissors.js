@@ -13,8 +13,9 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
-  hand1 = String.toLowercase()
-  hand2 = String.toLowercase()
+  hand1 = hand1.toLowerCase()
+  hand2 = hand2.toLowerCase()
+  console.log(hand1)
   // Write code here
   // Use the unit test to see what is expected
   if (hand1 === hand2){
@@ -27,7 +28,7 @@ const rockPaperScissors = (hand1, hand2) => {
     return "Hand two wins!";
   }
 
-  else (hand1 === "paper" && hand2 === "rock"){
+  else if (hand1 === "paper" && hand2 === "rock"){
     if (hand1 === "rock" && hand2 === "scissors");
     else (hand1 === "scissors" && hand2 === "paper");
     return "Hand one wins!";
