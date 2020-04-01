@@ -15,6 +15,8 @@ const rl = readline.createInterface({
 const rockPaperScissors = (hand1, hand2) => {
   hand1 = hand1.toLowerCase()
   hand2 = hand2.toLowerCase()
+  hand1 = hand1.trim()
+  hand2 = hand2.trim()
   console.log(hand1)
   // Write code here
   // Use the unit test to see what is expected
