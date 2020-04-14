@@ -9,10 +9,17 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word)  => {
-
+  word = word.toLowerCase();
+  word = word.trim();
+  const vowels = word.match(/[aeiou]/);
+  const firstPosition = word.indexOf(vowels);
   // Your code here
-
+  if (firstPosition > 0) {
+    return word.slice(firstPosition) + word.slice(0, firstPosition) + "ay";
+  }
+  return word + "yay";
 }
+
 
 
 const getPrompt = () => {
