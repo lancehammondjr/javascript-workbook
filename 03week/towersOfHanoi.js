@@ -19,24 +19,49 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(startStack, endStack) {
   // Your code here
-
+  //moving one piece to another postion/array
+  let moveStack = stacks[startStack]
+  let twoStack = stacks[endStack]
+  let piece = moveStack.pop(); // piece equals the last index of the choosen array
+  twoStack.push(piece); // twoStack is pushing the piece to the array that was choosen  
+  //twoStack.push(moveStack.pop())
+  console.log(piece)
 }
 
-function isLegal() {
+function isLegal(startStack, endStack) {
   // Your code here
+  let moveStack = stacks[startStack] // stacks a
+  let twoStack = stacks[endStack] //stack b
+  let moveStackPiece = moveStack[moveStack.length - 1] // stack at "a" will be the last index
+  let twoStackPiece = twoStack[twoStack.length -1]  // stack at "b" will be the last index
+  console.log(twoStackPiece,"twostackpiece")
+  //When moving a piece to a postion that is blank the computer does know no less the postion is undefined
+  if(moveStackPiece < twoStackPiece || twoStackPiece == undefined){
+    return true
+  }
+  else{
+    return false
+  }
 
 }
 
 function checkForWin() {
   // Your code here
-
+  if(stacks.b.length === 4){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
-
+  if (isLegal(startStack, endStack)){
+    movePiece(startStack, endStack);
+  }
 }
 
 function getPrompt() {
